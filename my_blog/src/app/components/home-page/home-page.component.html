@@ -1,0 +1,14 @@
+<div class="p-6">
+  <h1 class="text-3xl font-bold mb-6">{{ 'home.latest_posts' | translate }}</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div *ngFor="let post of posts" class="border rounded shadow hover:shadow-lg transition p-4">
+      <img *ngIf="post.cover_image" [src]="post.cover_image" alt="Cover" class="w-full h-40 object-cover rounded" />
+      <h2 class="text-xl font-semibold mt-2">{{ post.title }}</h2>
+      <p class="text-sm text-gray-600">{{ 'post_detail.author' | translate }}: {{ post.author_id }}</p>
+      <p class="text-sm text-gray-600">{{ 'post_detail.views' | translate }}: {{ post.views }}</p>
+      <p class="text-xs text-gray-400">{{ post.created_at | date }}</p>
+      <a [routerLink]="['/posts', post.slug]" class="text-blue-600 hover:underline mt-2 inline-block">{{ 'nav.posts' | translate }}</a>
+    </div>
+  </div>
+</div>

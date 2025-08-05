@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Home",
+    "posts": "Posts",
+    "profile": "Profile",
+    "admin": "Admin",
+    "logout": "Logout",
+    "language": "Language"
+  },
+  "home": {
+    "latest_posts": "Latest Posts"
+  },
+  "post_detail": {
+    "author": "Author",
+    "views": "Views",
+    "tags": "Tags"
+  },
+  "post_editor": {
+    "title": "Title",
+    "slug": "Slug",
+    "content": "Content",
+    "cover_image_url": "Cover Image URL",
+    "tags": "Tags (comma separated)",
+    "publish": "Publish",
+    "save": "Save"
+  },
+  "profile": {
+    "username": "Username",
+    "email": "Email",
+    "bio": "Bio",
+    "avatar_url": "Avatar URL",
+    "save": "Save Profile"
+  },
+  "admin": {
+    "moderate_posts": "Moderate Posts",
+    "approve": "Approve",
+    "reject": "Reject"
+  },
+  "auth": {
+    "login": "Login",
+    "signup": "Sign Up",
+    "password_recovery": "Password Recovery",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Submit"
+  }
+}

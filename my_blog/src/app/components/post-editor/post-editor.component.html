@@ -1,0 +1,31 @@
+<div class="p-6 max-w-3xl mx-auto">
+  <h1 class="text-2xl font-bold mb-4">{{ 'post_editor.title' | translate }}</h1>
+
+  <form [formGroup]="postForm" (ngSubmit)="save()" class="space-y-4">
+    <div>
+      <label>{{ 'post_editor.title' | translate }}</label>
+      <input formControlName="title" class="w-full border rounded px-3 py-2" />
+    </div>
+    <div>
+      <label>{{ 'post_editor.slug' | translate }}</label>
+      <input formControlName="slug" class="w-full border rounded px-3 py-2" />
+    </div>
+    <div>
+      <label>{{ 'post_editor.content' | translate }}</label>
+      <textarea formControlName="content" rows="6" class="w-full border rounded px-3 py-2"></textarea>
+    </div>
+    <div>
+      <label>{{ 'post_editor.cover_image_url' | translate }}</label>
+      <input formControlName="cover_image" class="w-full border rounded px-3 py-2" />
+    </div>
+    <div>
+      <label>{{ 'post_editor.tags' | translate }}</label>
+      <input formControlName="tags" class="w-full border rounded px-3 py-2" />
+    </div>
+    <div class="flex items-center space-x-2">
+      <input type="checkbox" formControlName="is_published" id="publish" />
+      <label for="publish">{{ 'post_editor.publish' | translate }}</label>
+    </div>
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">{{ 'post_editor.save' | translate }}</button>
+  </form>
+</div>

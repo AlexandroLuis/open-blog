@@ -1,0 +1,22 @@
+<div class="p-6 max-w-lg mx-auto">
+  <h1 class="text-2xl font-bold mb-4">{{ 'profile.username' | translate }}</h1>
+  <form [formGroup]="profileForm" (ngSubmit)="save()" class="space-y-4">
+    <div>
+      <label>{{ 'profile.username' | translate }}</label>
+      <input formControlName="username" class="w-full border rounded px-3 py-2" />
+    </div>
+    <div>
+      <label>{{ 'profile.email' | translate }}</label>
+      <input formControlName="email" type="email" class="w-full border rounded px-3 py-2" />
+    </div>
+    <div>
+      <label>{{ 'profile.bio' | translate }}</label>
+      <textarea formControlName="bio" rows="4" class="w-full border rounded px-3 py-2"></textarea>
+    </div>
+    <div>
+      <label>{{ 'profile.avatar_url' | translate }}</label>
+      <input formControlName="avatar_url" class="w-full border rounded px-3 py-2" />
+    </div>
+    <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">{{ 'profile.save' | translate }}</button>
+  </form>
+</div>

@@ -1,0 +1,60 @@
+# ================================
+# Root-level custom files
+# ================================
+back.sqm
+front.sqm
+
+# ================================
+# Server
+# ================================
+server/build/
+
+# ================================
+# my_blog - Dependencies & Build
+# ================================
+my_blog/node_modules/
+my_blog/.angular/cache/
+my_blog/.sass-cache/
+my_blog/connect.lock
+my_blog/coverage/
+my_blog/libpeerconnection.log
+my_blog/testem.log
+my_blog/typings/
+my_blog/.history/
+my_blog/tmp/
+my_blog/dist/
+my_blog/out-tsc/
+my_blog/bazel-out/
+
+# ================================
+# my_blog - Logs
+# ================================
+my_blog/npm-debug.log*
+my_blog/yarn-error.log*
+my_blog/yarn-debug.log*
+
+# ================================
+# my_blog - IDEs and editors
+# ================================
+my_blog/.idea/
+my_blog/.project
+my_blog/.classpath
+my_blog/.c9/
+my_blog/*.launch
+my_blog/.settings/
+my_blog/*.sublime-workspace
+
+# ================================
+# my_blog - Visual Studio Code
+# ================================
+my_blog/.vscode/
+!my_blog/.vscode/settings.json
+!my_blog/.vscode/tasks.json
+!my_blog/.vscode/launch.json
+!my_blog/.vscode/extensions.json
+
+# ================================
+# my_blog - System files
+# ================================
+my_blog/.DS_Store
+my_blog/Thumbs.db

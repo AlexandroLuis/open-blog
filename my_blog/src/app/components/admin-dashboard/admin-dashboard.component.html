@@ -1,0 +1,14 @@
+<div class="p-6 max-w-4xl mx-auto">
+  <h1 class="text-3xl font-bold mb-6">{{ 'admin.moderate_posts' | translate }}</h1>
+
+  <div *ngIf="pendingPosts.length === 0" class="text-gray-500">No posts to moderate.</div>
+
+  <div *ngFor="let post of pendingPosts" class="border p-4 rounded mb-4">
+    <h2 class="text-xl font-semibold">{{ post.title }}</h2>
+    <p>{{ post.content | slice:0:100 }}...</p>
+    <div class="flex space-x-4 mt-2">
+      <button (click)="approve(post)" class="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700">{{ 'admin.approve' | translate }}</button>
+      <button (click)="reject(post)" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">{{ 'admin.reject' | translate }}</button>
+    </div>
+  </div>
+</div>
