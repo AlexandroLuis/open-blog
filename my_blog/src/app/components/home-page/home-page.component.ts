@@ -8,7 +8,11 @@ import { Post } from '../../models/post.model';
 })
 export class HomePageComponent implements OnInit {
 
+  // Logic for posts
   posts: Post[] = [];
+
+  // Logic for the navigation menu dropdown
+  showPostsMenu = false;
 
   constructor(private postService: PostService) {}
 
@@ -16,5 +20,10 @@ export class HomePageComponent implements OnInit {
     this.postService.getPublishedPosts().subscribe(posts => {
       this.posts = posts;
     });
+  }
+
+  // Toggles the visibility of the post list dropdown
+  togglePostsMenu(): void {
+    this.showPostsMenu = !this.showPostsMenu;
   }
 }

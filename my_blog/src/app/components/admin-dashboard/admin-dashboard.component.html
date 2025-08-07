@@ -1,14 +1,59 @@
-<div class="p-6 max-w-4xl mx-auto">
-  <h1 class="text-3xl font-bold mb-6">{{ 'admin.moderate_posts' | translate }}</h1>
+<!-- This is the updated template for the admin dashboard. -->
+<!-- It features a cleaner, more modern design with improved button styling and icons. -->
+<div class="min-h-screen bg-gray-100 flex flex-col p-8">
+  
+  <!-- Header with Dashboard back button -->
+  <div class="flex justify-between items-center bg-white shadow-md rounded-t-lg p-6 mb-6">
+    <!-- Back to Dashboard Button with icon -->
+    <button (click)="goBack()" class="flex items-center text-gray-600 hover:text-blue-600 font-semibold transition-colors duration-200 space-x-2">
+      <!-- Icon for the back button -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+      </svg>
+      <span>{{ 'admin.dashboard' | translate }}</span>
+    </button>
+    <h1 class="text-3xl font-bold text-gray-800">{{ 'admin.moderate_posts' | translate }}</h1>
+    <!-- Empty div for balanced spacing -->
+    <div class="w-24"></div>
+  </div>
 
-  <div *ngIf="pendingPosts.length === 0" class="text-gray-500">No posts to moderate.</div>
+  <!-- Main Content Area -->
+  <div class="p-6 max-w-4xl mx-auto w-full bg-white shadow-lg rounded-b-lg flex-grow">
+    <div *ngIf="pendingPosts.length === 0" class="text-gray-500 text-center p-12 text-lg">
+      No posts to moderate.
+    </div>
 
-  <div *ngFor="let post of pendingPosts" class="border p-4 rounded mb-4">
-    <h2 class="text-xl font-semibold">{{ post.title }}</h2>
-    <p>{{ post.content | slice:0:100 }}...</p>
-    <div class="flex space-x-4 mt-2">
-      <button (click)="approve(post)" class="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700">{{ 'admin.approve' | translate }}</button>
-      <button (click)="reject(post)" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">{{ 'admin.reject' | translate }}</button>
+    <div *ngFor="let post of pendingPosts" class="border border-gray-200 bg-gray-50 p-6 rounded-xl mb-4 shadow-sm flex flex-col md:flex-row md:items-center justify-between">
+      <div class="flex-grow">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">{{ post.title }}</h2>
+        <p class="text-gray-600 mb-4">{{ post.content | slice:0:100 }}...</p>
+      </div>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <button (click)="approve(post)" class="bg-green-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+          {{ 'admin.approve' | translate }}
+        </button>
+        <button (click)="reject(post)" class="bg-red-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+          {{ 'admin.reject' | translate }}
+        </button>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- "Create New Post" floating button -->
+<div class="fixed bottom-6 left-6 z-10">
+  <button (click)="createNewPost()" class="bg-blue-600 text-white px-6 py-4 rounded-full shadow-xl hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 flex items-center justify-center space-x-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+    </svg>
+    <span>{{ 'admin.create_new_post' | translate }}</span>
+  </button>
+</div>
+
+
+  <!-- Footer Section -->
+<footer class="bg-white text-gray-600 text-center py-6 shadow-inner">
+    <p class="text-sm">
+       &copy; 2025 {{ 'footer.copyright' | translate }}
+    </p>
+</footer>

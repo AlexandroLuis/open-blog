@@ -5,44 +5,95 @@
     "profile": "Profile",
     "admin": "Admin",
     "logout": "Logout",
-    "language": "Language"
+    "language": "Language",
+    "menuTitle": "Recent Posts",
+    "allPosts": "View All Posts"
   },
   "home": {
-    "latest_posts": "Latest Posts"
-  },
-  "post_detail": {
-    "author": "Author",
-    "views": "Views",
-    "tags": "Tags"
+    "latest_posts": "Latest Posts",
+    "readMore": "Read More"
   },
   "post_editor": {
-    "title": "Title",
-    "slug": "Slug",
-    "content": "Content",
+    "back_to_dashboard": "Back to Admin Dashboard",
+    "create_new_post": "Create New Post",
+    "post_title": "Post Title",
+    "edit_post_title": "Edit Post",
+    "post_slug": "Post Slug",
+    "author_name": "Author's Name",
     "cover_image_url": "Cover Image URL",
-    "tags": "Tags (comma separated)",
-    "publish": "Publish",
-    "save": "Save"
+    "content": "Content",
+    "post_tags": "Post Tags",
+    "published_status": "Published",
+    "save_post_button": "Save Post"
+  },
+  "post_list": {
+    "header_title": "Published Posts",
+    "read_more_button": "Read More",
+    "no_posts_message": "No posts have been published yet."
+  },
+  "post_detail": {
+    "author_label": "Author",
+    "published_on_label": "Published On",
+    "views_label": "Views",
+    "not_found_message": "Sorry, this post could not be found."
   },
   "profile": {
+    "title": "User Profile",
     "username": "Username",
     "email": "Email",
     "bio": "Bio",
     "avatar_url": "Avatar URL",
-    "save": "Save Profile"
+    "save": "Save",
+    "back":"Return"
   },
   "admin": {
+    "dashboard": "Dashboard",
     "moderate_posts": "Moderate Posts",
     "approve": "Approve",
-    "reject": "Reject"
+    "reject": "Reject",
+    "create_new_post": "Create New Post"
   },
-  "auth": {
+  "login": {
     "login": "Login",
     "signup": "Sign Up",
-    "password_recovery": "Password Recovery",
+    "passwordRecoveryLink": "Password Recovery",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Submit",
+    "welcomeMessage": "Welcome back! Please sign in to your account",
+    "usernamePlaceholder": "Enter your username",
+    "passwordPlaceholder": "Enter your password",
+    "noAccount": "Don't have an account?"
+  },
+  "signup": {
+    "login": "Login",
+    "signup": "Sign Up",
+    "passwordRecoveryLink": "Password Recovery",
     "username": "Username",
     "email": "Email",
     "password": "Password",
-    "submit": "Submit"
+    "submit": "Submit",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
+    "emailPlaceholder": "Enter your email address",
+    "usernamePlaceholder": "Enter your username",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "agreeToTerms": "I agree to the",
+    "termsAndConditions": "Terms & Conditions",
+    "privacyPolicy": "Privacy Policy",
+    "alreadyHaveAccount": "Already have an account?"
+  },
+  "recoverPassword": {
+    "title": "Password Recovery",
+    "instructionMessage": "Enter your email address to receive a password reset link.",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "submit": "Send Reset Link",
+    "returnToLogin": "Return to Login"
+  },
+  "footer": {
+    "copyright": "All Rights Reserved"
   }
 }

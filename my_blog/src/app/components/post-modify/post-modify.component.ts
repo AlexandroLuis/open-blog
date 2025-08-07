@@ -5,13 +5,12 @@ import { PostService } from '../../services/post.service';
 import { Post } from '../../models/post.model';
 
 @Component({
-  selector: 'app-post-editor',
-  templateUrl: './post-editor.component.html'
+  selector: 'app-post-modify',
+  templateUrl: './post-modify.component.html'
 })
-export class PostEditorComponent implements OnInit {
+export class PostModifyComponent implements OnInit {
 
   postForm: FormGroup;
-  isEditing = false;
   editingPostId?: number;
 
   constructor(
@@ -20,27 +19,26 @@ export class PostEditorComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {
+    // Initialize the form with empty values
     this.postForm = this.fb.group({
       title: [''],
       slug: [''],
       content: [''],
       cover_image: [''],
-      author_name: [''], // Added back author_name to the form group
+      author_name: [''],
       tags: [''],
       is_published: [false]
     });
   }
 
   ngOnInit() {
-    // Get the slug from the URL to determine if we are editing an existing post
+    // Get the slug from the URL to fetch the post data
     const slug = this.route.snapshot.paramMap.get('id');
     if (slug) {
-      this.isEditing = true;
       this.postService.getPostBySlug(slug).subscribe(post => {
         if (post) {
-          // Store the ID of the post being edited
           this.editingPostId = post.id;
-          // Populate the form with the post data
+          // Patch the form with the post data, converting the tags array to a string
           this.postForm.patchValue({
             ...post,
             tags: post.tags.join(', ')
@@ -52,35 +50,31 @@ export class PostEditorComponent implements OnInit {
 
   savePost(): void {
     if (this.postForm.invalid) {
-      // Add a custom message box here for validation feedback
+      // Add custom validation feedback here
       return;
     }
 
     const formValue = this.postForm.value;
     const post: Post = {
-      // Use the existing ID for edits, or 0 for a new post
-      id: this.isEditing ? this.editingPostId! : 0,
+      id: this.editingPostId!,
       author_id: 1, // Mock current user ID
       title: formValue.title,
       slug: formValue.slug,
       content: formValue.content,
       cover_image: formValue.cover_image,
-      // Split the tags string back into an array
       tags: formValue.tags ? formValue.tags.split(',').map((tag: string) => tag.trim()) : [],
       is_published: formValue.is_published,
-      views: 0,
+      views: 0, // Views are not changed on edit
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
     };
 
     this.postService.savePost(post).subscribe(() => {
-      // Navigate to the admin dashboard after saving
-      this.router.navigate(['/admin']);
+      this.router.navigate(['/home']);
     });
   }
 
   goBack(): void {
-    // Navigate back to the admin dashboard
-    this.router.navigate(['/admin']);
+    this.router.navigate(['/home']);
   }
 }
