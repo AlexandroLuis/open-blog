@@ -27,6 +27,8 @@
     "save_post_button": "Save Post"
   },
   "post_list": {
+    "author": "Author",
+    "views": "Views",
     "header_title": "Published Posts",
     "read_more_button": "Read More",
     "no_posts_message": "No posts have been published yet."

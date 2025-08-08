@@ -44,8 +44,8 @@
         <!-- Post Content -->
         <div class="p-6">
           <h2 class="text-xl font-semibold text-gray-900 mb-2">{{ post.title }}</h2>
-          <p class="text-sm text-gray-600 mb-1">{{ 'postList.author' | translate }}: {{ post.author_id }}</p>
-          <p class="text-sm text-gray-600 mb-4">{{ 'postList.views' | translate }}: {{ post.views }}</p>
+          <p class="text-sm text-gray-600 mb-1">{{ 'post_list.author' | translate }}: {{ post.author_id }}</p>
+          <p class="text-sm text-gray-600 mb-4">{{ 'post_list.views' | translate }}: {{ post.views }}</p>
           <a [routerLink]="['/posts', post.slug]" 
              class="text-blue-600 hover:text-blue-700 font-medium inline-block transition duration-200">
             {{ 'home.readMore' | translate }}
